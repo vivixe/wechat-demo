@@ -6,12 +6,12 @@ server:
 wechat:
   config:
     #配置一个文字的模板ID
-    singleTemplateId: 7Ck2b8RmhKN_vK8CD6PL5sdaddeDZYACKvfhzI
+    singleTemplateId: -tu42rgudwAe_SeNOTAiKk_o67XY3hBXKThB9B21jHs
     template:
       #早安模板
       morningTemplate:
         #模板ID
-        templateId: Llu3XJgT6-TTaqqOW1sdadadVIYidveFsjs7cymcy-Qegg
+        templateId: S7DAhCiREwpRRKwIEsNRxhRayRhr7Iytdx5_BUZ0J4U
         #是否关注的用户全发送，ture为是，当值为ture时，sendOpenId 为排除发送对象的微信用户，当值为false为否，sendOpenId为发送对象的微信用户
         allSend: true
         filterOpenIds:
@@ -36,7 +36,7 @@ wechat:
             constellation: 天秤座
       #颜文字模板
       emoticonsTemplate:
-        templateId: 7Ck2b8RmhKN_vK8CD6PL5sdaddeDZYACKvfhzI
+        templateId: -tu42rgudwAe_SeNOTAiKk_o67XY3hBXKThB9B21jHs
         allSend: true
         filterOpenIds:
         parameter:
