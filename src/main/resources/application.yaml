@@ -6,7 +6,7 @@ wechat:
       #早安模板
       morningTemplate:
         #模板ID
-        templateId: 	qPTXBqeSiHgbX4KC14jLGfgkU9XK-TA86YQxXGTETfQ
+        templateId: qPTXBqeSiHgbX4KC14jLGfgkU9XK-TA86YQxXGTETfQ
         #是否关注的用户全发送，ture为是，当值为ture时，sendOpenId 为排除发送对象的微信用户，当值为false为否，sendOpenId为发送对象的微信用户
         allSend: false
         filterOpenIds:
