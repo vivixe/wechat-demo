@@ -259,8 +259,6 @@ public class WechatService {
         //毒鸡汤
         // String du = getDu();
         //心情
-        String[] split = HAPPY_STATE.split("、");
-        String state = split[random.nextInt(split.length)];
         //星座
         JSONObject constellation = getConstellation(morningTemplateParameter.getConstellation());
         //速配星座
@@ -271,7 +269,6 @@ public class WechatService {
         templateMessage.addData(new WxMpTemplateData("title", morningTemplateParameter.getTitle(), COLOR_LIST.get(random.nextInt(COLOR_LIST.size()))));
         templateMessage.addData(new WxMpTemplateData("time", LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")), COLOR_LIST.get(random.nextInt(COLOR_LIST.size()))));
         templateMessage.addData(new WxMpTemplateData("day", LocalDate.now().toEpochDay() - meetDate.toEpochDay() + 1 + "", COLOR_LIST.get(random.nextInt(COLOR_LIST.size()))));
-        templateMessage.addData(new WxMpTemplateData("state", state, COLOR_LIST.get(random.nextInt(COLOR_LIST.size()))));
         templateMessage.addData(new WxMpTemplateData("city", morningTemplateParameter.getCity(), COLOR_LIST.get(random.nextInt(COLOR_LIST.size()))));
         templateMessage.addData(new WxMpTemplateData("dayWeather", weather.getOrDefault("dayweather", "风云大变").toString(), COLOR_LIST.get(random.nextInt(COLOR_LIST.size()))));
         templateMessage.addData(new WxMpTemplateData("daytemp", weather.getOrDefault("daytemp", "105").toString() + "℃", COLOR_LIST.get(random.nextInt(COLOR_LIST.size()))));
