@@ -18,7 +18,6 @@ import me.chanjar.weixin.mp.bean.template.WxMpTemplateMessage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -45,24 +44,24 @@ public class WechatService {
     private static final List<String> COLOR_LIST = new ArrayList<>();
     private static final RestTemplate REST_TEMPLATE = new RestTemplate();
 
-    private static final String HAPPY_STATE = "欢快、含笑九泉、喜上眉梢、喜气洋洋、欢天喜地、乐不思蜀、喜笑颜开、兴高采烈、兴致大发、笑容满面、精神抖擞、满面春风、笑逐颜开、心花怒放、情绪高涨、欢欣雀跃、风光无限、春心荡漾、巧笑嫣然、上蹿下跳、怦然心动、激动不已、激情四射、情绪高涨、乐开怀、红红火火、笑容可掬、乐开怀、高高兴兴、意气风发、" +
-            "欢喜、喜悦、夷愉、愉快、开心、快乐、欢乐、乐意、首肯、愿意、忻悦、欣忭、欣喜、快活、夷悦、怡悦、雀跃、兴奋、欢腾、欢跃、欢欣、欢畅、欢娱、得意、痛快、康乐、安乐、得志、畅快、舒畅、称心、满足、满意欢娱、欢天喜地、乐不可支、兴趣盎然、兴致勃勃、喜形于色" +
-            "乐悠悠、甜滋滋、乐滋滋、乐悠悠、笑嘻嘻、笑眯眯、笑哈哈、喜洋洋、喜滋滋、兴冲冲、乐融融、乐陶陶、乐呵呵";
+    private static final String HAPPY_STATE = "喜上眉梢、喜气洋洋、喜笑颜开、兴致大发、笑容满面、精神抖擞、满面春风、笑逐颜开、心花怒放、情绪高涨、欢欣雀跃、风光无限、巧笑嫣然、乐开怀、红红火火、笑容可掬、高高兴兴、意气风发、" +
+            "欢喜、喜悦、夷愉、愉快、开心、快乐、欢乐、乐意、愿意、忻悦、欣喜、夷悦、怡悦、雀跃、兴奋、欢腾、欢跃、欢欣、欢畅、欢娱、康乐、安乐、得志、畅快、舒畅、称心、满足、满意欢娱、欢天喜地、乐不可支、兴趣盎然、兴致勃勃、喜形于色"
+            ;
 
     static {
-        COLOR_LIST.add("#00ff00");
-        COLOR_LIST.add("#00ffff");
-        COLOR_LIST.add("#ff0000");
-        COLOR_LIST.add("#980000");
-        COLOR_LIST.add("#ff9900");
-        COLOR_LIST.add("#4a86e8");
-        COLOR_LIST.add("#0000ff");
-        COLOR_LIST.add("#9900ff");
-        COLOR_LIST.add("#ff00ff");
-        COLOR_LIST.add("#434343");
-        COLOR_LIST.add("#660000");
-        COLOR_LIST.add("#cc0000");
-        COLOR_LIST.add("#783f04");
+        COLOR_LIST.add("#FFB6C1");
+        COLOR_LIST.add("#DC143C");
+        COLOR_LIST.add("#EE82EE");
+        COLOR_LIST.add("#7B68EE");
+        COLOR_LIST.add("#1E90FF");
+        COLOR_LIST.add("#20B2AA");
+        COLOR_LIST.add("#3CB371");
+        COLOR_LIST.add("#556B2F");
+        COLOR_LIST.add("#FFA500");
+        COLOR_LIST.add("#FF6347");
+        COLOR_LIST.add("#FF8C00");
+        COLOR_LIST.add("#87CEFA");
+        COLOR_LIST.add("#CCFF33");
         COLOR_LIST.add("#4c1130");
         COLOR_LIST.add("#1c4587");
         COLOR_LIST.add("#3c78d8");
@@ -258,7 +257,7 @@ public class WechatService {
         //彩虹屁
         String chp = getChp();
         //毒鸡汤
-        String du = getDu();
+        // String du = getDu();
         //心情
         String[] split = HAPPY_STATE.split("、");
         String state = split[random.nextInt(split.length)];
@@ -282,21 +281,21 @@ public class WechatService {
         templateMessage.addData(new WxMpTemplateData("friend", friend.equals(personalInfo.getConstellation()) ? friend : friend + "（竟然不是我", COLOR_LIST.get(random.nextInt(COLOR_LIST.size()))));
         templateMessage.addData(new WxMpTemplateData("summary", summary, COLOR_LIST.get(random.nextInt(COLOR_LIST.size()))));
         //太长拆分下一个发送
-        if (summary.length() + chp.length() + du.length() > 130 && StrUtil.isNotEmpty(wechatConfigProperties.getSingleTemplateId())) {
+        if (summary.length() + chp.length() > 130 && StrUtil.isNotEmpty(wechatConfigProperties.getSingleTemplateId())) {
             templateMessage.addData(new WxMpTemplateData("chp", "⬇⬇", COLOR_LIST.get(random.nextInt(COLOR_LIST.size()))));
-            templateMessage.addData(new WxMpTemplateData("du", "⬇⬇", COLOR_LIST.get(random.nextInt(COLOR_LIST.size()))));
+            // templateMessage.addData(new WxMpTemplateData("du", "⬇⬇", COLOR_LIST.get(random.nextInt(COLOR_LIST.size()))));
             sendMessage(templateMessage);
             WxMpTemplateMessage wxMpTemplateMessage = WxMpTemplateMessage.builder()
                     .toUser(templateMessage.getToUser())
                     .templateId(wechatConfigProperties.getSingleTemplateId())
                     .build();
-            wxMpTemplateMessage.addData(new WxMpTemplateData("data1", "送你一句油油的话语：" + chp, COLOR_LIST.get(random.nextInt(COLOR_LIST.size()))));
-            wxMpTemplateMessage.addData(new WxMpTemplateData("data2", "鸡汤鸡汤：" + du, COLOR_LIST.get(random.nextInt(COLOR_LIST.size()))));
+            wxMpTemplateMessage.addData(new WxMpTemplateData("data1", " \n" + chp, COLOR_LIST.get(random.nextInt(COLOR_LIST.size()))));
+            // wxMpTemplateMessage.addData(new WxMpTemplateData("data2", ""  , COLOR_LIST.get(random.nextInt(COLOR_LIST.size()))));
             sendMessage(wxMpTemplateMessage);
             return false;
         } else {
-            templateMessage.addData(new WxMpTemplateData("chp", "送你一句油油的话语：" + chp, COLOR_LIST.get(random.nextInt(COLOR_LIST.size()))));
-            templateMessage.addData(new WxMpTemplateData("du", "鸡汤鸡汤：" + du, COLOR_LIST.get(random.nextInt(COLOR_LIST.size()))));
+            templateMessage.addData(new WxMpTemplateData("chp", " \n" + chp, COLOR_LIST.get(random.nextInt(COLOR_LIST.size()))));
+            // templateMessage.addData(new WxMpTemplateData("du", "鸡汤鸡汤：" + du, COLOR_LIST.get(random.nextInt(COLOR_LIST.size()))));
             return true;
         }
     }
@@ -360,16 +359,16 @@ public class WechatService {
      *
      * @return
      */
-    public String getDu() {
-        try {
-            String url = "https://api.shadiao.pro/du";
-            ResponseEntity<Object> forEntity = REST_TEMPLATE.getForEntity(url, Object.class);
-            JSONObject jsonObject = JSON.parseObject(JSON.toJSONString(forEntity.getBody()));
-            return jsonObject.getJSONObject("data").getString("text");
-        } catch (Exception e) {
-            log.error("获取毒鸡汤失败", e);
-            return "加油！你是最胖的！！！";
-        }
-    }
+    // public String getDu() {
+    //     try {
+    //         String url = "https://api.shadiao.pro/du";
+    //         ResponseEntity<Object> forEntity = REST_TEMPLATE.getForEntity(url, Object.class);
+    //         JSONObject jsonObject = JSON.parseObject(JSON.toJSONString(forEntity.getBody()));
+    //         return jsonObject.getJSONObject("data").getString("text");
+    //     } catch (Exception e) {
+    //         log.error("获取毒鸡汤失败", e);
+    //         return "加油！你是最胖的！！！";
+    //     }
+    // }
 
 }

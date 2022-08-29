@@ -75,15 +75,15 @@ public class ExpressionConfig {
 
     public final static String s_weather=
             "┌─────────────────┐\n" +
-            "　│通知：　       │\n" +
-            "　│今天天气不好    |\n" +
-            "　│记得带伞。      │\n" +
+            "　│今天好像        │\n" +
+            "　│天气不好        |\n" +
+            "　│出门记得带把伞  │\n" +
             "　  (ﾖ─-∧＿∧─-E)\n" +
             "　  ＼（* ´∀｀）／\n" +
             "　 　 Y 　　　 Y";
 
     public final static String s5=
-            "你是最胖的！！！！！！\n" +
+            "你是坠棒的汪汪！！！！\n" +
             "　☆  *　.  　☆\n" +
             "　　. ∧＿∧　∩　* ☆\n" +
             "*  ☆ ( ・∀・)/ .\n" +
@@ -135,12 +135,12 @@ public class ExpressionConfig {
             "　　　 ｡◎∧_∧☆∂o\n" +
             "　　　｡○(*ﾟーﾟ)◇☆\n" +
             "　　　◎|￣∪∪￣￣|\n" +
-            "　　／☆|生日快乐！|\n" +
+            "　　／☆| 平安喜乐 |\n" +
             "　▼　 ﾟoο◇☆＿＿|\n" +
             "∠▲――-☆∂o◎∂ﾟ";
 
     public final static String s8=
-            "   ∧_∧　啪啪啪啪~起床起床\n" +
+            "   ∧_∧　哒哒哒哒~起床起床\n" +
             "（ ・ω・)=つ≡つ\n" +
             "（っ ≡つ=つ\n" +
             "`/　　)\n" +
@@ -165,7 +165,7 @@ public class ExpressionConfig {
             "。　Ｏ　　　ｏ\n" +
             "　 ｏ　　　。\n" +
             "○。\n" +
-            "　　　早上好呀呀　 Ｏ\n" +
+            "　　　早上好汪汪　 Ｏ\n" +
             "。　 　 ＿\n" +
             "　　 ,.'´　　｀゛、　ｏ\n" +
             "  　（ ＿´ ∀ ｀ _  ）";
@@ -182,7 +182,7 @@ public class ExpressionConfig {
             "　 しーＪ";
 
     public final static String s13=
-            "巴拉巴拉巴拉，把你变成猪！\n" +
+            "歪比歪比，把你变成野猪！\n" +
             "　 ∧＿∧\n" +
             " （｡･ω･｡)つ━☆・*。\n" +
             "  ⊂　　 ノ 　　　・゜+.\n" +
@@ -353,45 +353,6 @@ public class ExpressionConfig {
             "　Γ￣￣￣￣ |　|／\n" +
             "　Ｌ＿＿＿＿|／";
 
-    public final static String s30=
-            "//  程序出Bug了？     \n" +
-            "// 　　　∩∩          \n" +
-            "//   （´･ω･）       \n" +
-            "//   ＿|　⊃／(＿＿_  \n" +
-            "// 　／ └-(＿＿＿／  \n" +
-            "// 　￣￣￣￣￣￣￣   \n" +
-            "// 算了反正不是我写的  \n" +
-            "// 　 ⊂⌒／ヽ-、＿   \n" +
-            "//  ／⊂_/＿＿＿＿ ／\n" +
-            "// 　￣￣￣￣￣￣￣  \n" +
-            "// 万一是我写的呢   \n" +
-            "//   　∩∩      \n" +
-            "//   （´･ω･）   \n" +
-            "//   ＿|　⊃／(＿＿_  \n" +
-            "//  ／ └-(＿＿＿／ \n" +
-            "//  ￣￣￣￣￣￣￣  \n" +
-            "// 算了反正改了一个又出三个 \n" +
-            "//    ⊂⌒／ヽ-、＿  \n" +
-            "//  ／⊂_/＿＿＿＿ ／\n" +
-            "//  ￣￣￣￣￣￣￣  ";
-
-    public final static String s31=
-            "    __________________________  \n" +
-            "   ,'       江城子. 程序员之歌    `.  \n" +
-            "  /                              \\ \n" +
-            " /   十年生死两茫茫，写程序，到天亮。 \\ \n" +
-            "|         千行代码，Bug何处藏。       | \n" +
-            "|    纵使上线又怎样，朝令改，夕断肠。   | \n" +
-            "|                                 |\n" +
-            " \\   纵使上线又怎样，朝令改，夕断肠。  /\n" +
-            "  \\       相顾无言，惟有泪千行。    / \n" +
-            "   \\ 每晚灯火阑珊处，夜难寐，加班狂。/ \n" +
-            "    `._______  _______________.'  \n" +
-            "          / ,'\n" +
-            "         / ' \n" +
-            "      O /'\n" +
-            "     /|-' \n" +
-            "     /| ";
 
     public final static String s32=
             "♥*•♫.•*♥♥*•♫.•*♥♥*•♫.•*♥  \n" +
@@ -402,7 +363,7 @@ public class ExpressionConfig {
 
     public final static String s33=
             "|￣￣￣￣￣￣￣￣￣￣￣|  \n" +
-            "    能不能找我聊下天     \n" +
+            "    早上好啊！汪汪       \n" +
             "|＿＿＿＿＿＿＿＿＿＿＿|  \n" +
             "     \\ (•◡•) /         \n" +
             "      \\     /          \n" +
@@ -438,8 +399,6 @@ public class ExpressionConfig {
         EXPRESSION_LIST.add(s26);
         EXPRESSION_LIST.add(s27);
         EXPRESSION_LIST.add(s28);
-        EXPRESSION_LIST.add(s30);
-        EXPRESSION_LIST.add(s31);
         EXPRESSION_LIST.add(s32);
         EXPRESSION_LIST.add(s33);
     }
