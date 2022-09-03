@@ -19,16 +19,16 @@ wechat:
             title: 早上好困困狗
             #你们的相遇时间
             meetDate: '2021-02-25'
-            city: 台州
+            city: 常州
             #居住地点，高德地图api下载查询 https://lbs.amap.com/api/webservice/download
-            cityCode: 331000
+            cityCode: 320400
             constellation: 天秤座
           #把‘填写你的需要特定配置的微信用户号’覆盖位微信用户ID，可以对照正确填写好的配置示例，多用户可以按照格式继续添加下去
           oVbNj6D9o_qRNDhEL58Vijyd_Mtc:
             title: 早上好困困狗
             meetDate: '2021-02-25'
-            city: 台州
-            cityCode: 331000
+            city: 常州
+            cityCode: 320400
             constellation: 天秤座
       #颜文字模板
       emoticonsTemplate:
